@@ -55,6 +55,20 @@
       $('.modal-trigger').leanModal();
     }
   };
-
-  // ADD YOUR CODE HERE
+  $(document).ready(function() {
+    $("button").click(function(movie){
+    movie.preventDefault();
+    var  url = "http://www.omdbapi.com/?apikey=";
+    var searched = $("input").val();
+    console.log(searched);
+  $.get( (url + searched), function(data) {
+    for (var i = 0; i < data.length; i++) {
+      // $("select").append($("<option></option>").text(data[i].title));
+      // $(".pincode").on("change", function() {
+      //   var findTitle = $(":selected").val();
+      //   $(".role-preview").attr("src", (data.find(y => y.title === findTitle).img));
+      });
+    }
+  });
+}
 })();
